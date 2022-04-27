@@ -1,13 +1,15 @@
 import React from "react";
-import { BrowserRouter, Switch, Route } from "react-router-dom";
+import { Switch, Route } from "react-router-dom";
 import Home from "./views/Home";
 import Films from "./views/Films";
 import SingleFilm from "./views/SingleFilm";
+import Navbar from "./components/Navbar";
 
 class App extends React.Component {
   render() {
     return (
-      <BrowserRouter>
+      <div>
+        <Navbar />
         <Switch>
           <Route exact path="/" component={Home} />
 
@@ -15,7 +17,7 @@ class App extends React.Component {
 
           <Route exact path="/films/:singlefilm" component={SingleFilm} />
         </Switch>
-      </BrowserRouter>
+      </div>
     );
   }
 }
